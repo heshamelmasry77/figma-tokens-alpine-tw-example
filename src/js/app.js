@@ -8,7 +8,7 @@ Alpine.start();
 // Load tokens dynamically and set them as CSS variables
 (async function setDesignTokens() {
     try {
-        const response = await fetch('/tokens.json');
+        const response = await fetch('/tokens.json'); // Ensure the path to tokens.json is correct
         const tokens = await response.json();
 
         const root = document.documentElement; // Access the :root element in CSS
@@ -16,12 +16,12 @@ Alpine.start();
         // Recursive function to loop through tokens and set CSS variables
         function setVariables(obj, prefix = '') {
             for (const [key, value] of Object.entries(obj)) {
-                if (typeof value === 'object' && !value.value) {
-                    // If the value is an object, recurse deeper
-                    setVariables(value, `${prefix}-${key}`);
-                } else if (value.value) {
+                if (value && typeof value === 'object' && !value.value) {
+                    // If the value is an object and not a token, recurse deeper
+                    setVariables(value, prefix ? `${prefix}-${key}` : key);
+                } else if (value && value.value) {
                     // If it's a token, create a CSS variable
-                    const variableName = `--${prefix}-${key}`.replace(/_/g, '-').toLowerCase();
+                    const variableName = `--${prefix}-${key}`.replace(/ /g, '-').toLowerCase();
                     root.style.setProperty(variableName, value.value);
                 }
             }

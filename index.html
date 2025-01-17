@@ -6,14 +6,12 @@
     <title>Figma Tokens Example</title>
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="./src/css/style.css" />
-    <!-- JavaScript -->
-    <script type="module" src="./src/js/app.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen font-sans p-6">
 <div class="max-w-4xl mx-auto">
     <h1 class="text-2xl font-bold mb-6 text-center">Figma Tokens Example</h1>
 
-    <!-- Using Tailwind CSS tokens -->
+    <!-- Buttons -->
     <button class="bg-primary text-white px-4 py-2 rounded-lg mb-4">
         Primary Button
     </button>
@@ -21,9 +19,48 @@
         Secondary Button
     </button>
 
-    <!-- Using CSS variables directly -->
-    <div class="text-lg font-montserrat" style="color: var(--100-primitives-mode-1-colors-primary-500);">
-        This text uses the primary color and Montserrat font.
+    <!-- Typography -->
+    <div class="mb-6">
+        <h3 class="text-lg font-medium mb-2">Typography</h3>
+        <p class="text-small font-montserrat">Small Font - Montserrat</p>
+        <p class="text-medium font-montserrat">Medium Font - Montserrat</p>
+        <p class="text-large font-montserrat">Large Font - Montserrat</p>
+    </div>
+
+    <!-- Colors Showcase -->
+    <div class="mb-6">
+        <h3 class="text-lg font-medium mb-2">Colors</h3>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="text-center">
+                <div class="w-16 h-16 mx-auto rounded bg-primary"></div>
+                <p class="text-sm mt-2">Primary</p>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 mx-auto rounded bg-secondary"></div>
+                <p class="text-sm mt-2">Secondary</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Border Radius -->
+    <div class="mb-6">
+        <h3 class="text-lg font-medium mb-2">Border Radius</h3>
+        <div>
+            <div class="w-16 h-16 bg-gray-200 border rounded-lg"></div>
+            <p class="text-sm mt-2">Rounded LG</p>
+        </div>
+    </div>
+
+    <!-- Line Heights -->
+    <div class="mb-6">
+        <h3 class="text-lg font-medium mb-2">Line Heights</h3>
+        <div>
+            <p class="text-sm font-montserrat leading-100">Line Height 100 (15px)</p>
+            <p class="text-sm font-montserrat leading-200">Line Height 200 (18px)</p>
+            <p class="text-sm font-montserrat leading-300">Line Height 300 (24px)</p>
+            <p class="text-sm font-montserrat leading-400">Line Height 400 (36px)</p>
+            <p class="text-sm font-montserrat leading-500">Line Height 500 (48px)</p>
+        </div>
     </div>
 </div>
 </body>
